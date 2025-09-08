@@ -1,0 +1,21 @@
+apiVersion: apps/v1v1
+kind: ReplicaSet
+metadata:
+  name: arjya-replica
+  namespace: arjya
+  labels: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      -  name: arjya-svc-container
+         image: nginx:latest
+         ports:
+         -  containerPort: 80

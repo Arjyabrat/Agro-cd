@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: arjya-pod
+  namespace: arjya
+spec:
+  containers:
+  - name: arjya-container
+    image: nginx:latest
+    ports:
+    - containerPort: 80
